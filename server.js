@@ -4,6 +4,7 @@ const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const flightRoutes = require("./routes/flightRoutes");
+const chatRoutes = require("./routes/chatRoutes");
 
 const URI = process.env.MONGODB_URI;
 
@@ -35,6 +36,7 @@ app.use(cors());
 
 //routes
 app.use("/api", flightRoutes);
+app.use("/api", chatRoutes);
 
 //index route
 app.get("/", (req, res) => {
